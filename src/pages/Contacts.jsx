@@ -47,13 +47,13 @@ function Contacts() {
               ГОЛОВНОЙ ОФИС
             </h3>
             <p className="text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Адрес: </b> Москва, Ленинский проспект, 14B, Tower Central Park
+              <b>Адрес: </b> Москва, Ленинский проспект, 15A, Tower Central Park
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
               <b>График работы:</b> 09:00 - 18:00
             </p>
             <p className="mt-4 sm:mt-6 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Телефон:</b> +7 (495) 123-45-67
+              <b>Телефон:</b> +7 (499) 322-25-03
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
               <b>Email:</b> info@it-alliance.ru
@@ -68,7 +68,7 @@ function Contacts() {
               <b>Email:</b> support@it-alliance.ru
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Телефон:</b> 8 (800) 555-00-55
+              <b>Телефон:</b> 8 (800) 533-98-17
             </p>
             {/* <a href="#feedback-form"> */}
             <button
