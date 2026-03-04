@@ -35,6 +35,16 @@
 .card:hover {
   @apply bg-brand-black -translate-y-4 scale-[0.98]
 }
+.svg-icon{
+  max-width: 70%;
+  margin: 0 auto;
+  max-height: 90px;
+}
+.svg-big-icon{
+  max-width: 85%;
+  margin: 0 auto;
+  max-height: 110px;
+}
 /* shadow-[4.444px_5.556px_11.111px_0_rgba(30, 30, 30, 0.50)] */
 /* font family */
 

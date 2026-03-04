@@ -4,6 +4,8 @@ import { useRef, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import logo from "../assets/images/LOGO_white.svg";
 import { useSmoothScroll } from "../components/useSmoothScroll";
+import PartnerForm from "../components/PartnerForm";
+
 
 function Contacts() {
   const feedbackRef = useSmoothScroll("#feedback-form", 100);
@@ -37,7 +39,6 @@ function Contacts() {
           </h1>
         </section>
 
-        {/* Контакты */}
         <section
           ref={contactRef}
           className="relative z-50 container mx-auto px-4 sm:px-5 py-6 sm:py-8 grid gap-8 sm:gap-10 md:gap-12 lg:gap-15 md:grid-cols-2"
@@ -47,13 +48,13 @@ function Contacts() {
               ГОЛОВНОЙ ОФИС
             </h3>
             <p className="text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Адрес: </b> Москва, Ленинский проспект, 14B, Tower Central Park
+              <b>Адрес: </b> Москва, Ленинский проспект, 15A, Tower Central Park
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
               <b>График работы:</b> 09:00 - 18:00
             </p>
             <p className="mt-4 sm:mt-6 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Телефон:</b> +7 (495) 123-45-67
+              <b>Телефон:</b> +7 (499) 322-25-03
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
               <b>Email:</b> info@it-alliance.ru
@@ -68,7 +69,7 @@ function Contacts() {
               <b>Email:</b> support@it-alliance.ru
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Телефон:</b> 8 (800) 555-00-55
+              <b>Телефон:</b> 8 (800) 533-98-17
             </p>
             {/* <a href="#feedback-form"> */}
             <button
@@ -126,8 +127,6 @@ function Contacts() {
             />
           </div>
         </section>
-
-        {/* Логотип и текст - СРЕДНИЙ слой */}
         <div className="fixed inset-0 z-40 flex items-center justify-center pointer-events-none">
           <img
             src={logo}
@@ -144,12 +143,10 @@ function Contacts() {
           </h1>
         </div>
 
-        {/* Галерея - САМЫЙ НИЗКИЙ слой */}
         <div className="relative overflow-hidden z-30">
           <ParallaxImageGallery />
         </div>
 
-        {/* Форма */}
         <section
           ref={feedbackRef}
           className="relative z-50 mt-16 sm:mt-20 md:mt-25 lg:mt-30 relative"
@@ -161,7 +158,6 @@ function Contacts() {
             ОБРАТНАЯ СВЯЗЬ
           </h2>
 
-          {/* arrow left  */}
           <div className="hidden xl:block absolute w-[369px] h-[394px] left-15 top-40 transition-all duration-500 transform rotate-180">
             <span className="absolute top-0 right-16 transition-all duration-300 hover:fill-[#9e9e9e] fill-[#FFF4F4]">
               <svg
@@ -250,91 +246,7 @@ function Contacts() {
 
           <div className="flex justify-center px-4 sm:px-5">
             <div className="bg-[#1E1E1E] text-white w-full max-w-[400px] sm:max-w-[450px] p-5 sm:p-6 md:p-7 rounded-2xl sm:rounded-3xl">
-              <form className="flex flex-col">
-                <label className="text-[#FBFFFE] text-[14px] sm:text-[16px]">
-                  Имя
-                </label>
-                <input
-                  type="text"
-                  className="outline-none bg-[#282828] mt-2 px-4 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-sm text-[#FFFFFF]"
-                  placeholder="Имя"
-                  required
-                />
-                <label className="text-[#FBFFFE] mt-4 sm:mt-6 text-[14px] sm:text-[16px]">
-                  E-mail
-                </label>
-                <input
-                  type="email"
-                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                  className="outline-none bg-[#282828] mt-2 px-4 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-sm text-[#FFFFFF]"
-                  placeholder="E-mail"
-                  required
-                />
-                <label className="text-[#FBFFFE] mt-4 sm:mt-6 text-[14px] sm:text-[16px]">
-                  Тема
-                </label>
-                <input
-                  type="text"
-                  className="outline-none bg-[#282828] mt-2 px-4 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-sm text-[#FFFFFF]"
-                  placeholder="Тема"
-                  required
-                />
-                <label className="text-[#FBFFFE] mt-4 sm:mt-6 text-[14px] sm:text-[16px]">
-                  Сообщение
-                </label>
-                <textarea
-                  className="outline-none bg-[#282828] mt-2 px-4 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-sm text-[#FFFFFF] h-24 sm:h-28"
-                  placeholder="Сообщение"
-                  required
-                />
-                {/* <label className="flex items-center text-[12px] sm:text-[13px] mt-4 sm:mt-5 text-white cursor-pointer text-justify">
-                  <input
-                    type="checkbox"
-                    className="absolute opacity-0 cursor-pointer h-0 w-0 peer" required
-                  />
-                  <span
-                    className="relative h-4 w-4 bg-[#1e1e29] border border-white rounded transition-all duration-200 mr-2.5
-                  after:content-[''] after:absolute after:hidden after:left-1/2 after:top-1/2 
-                  after:w-1.5 after:h-2.5 after:border-white after:border-r-2 after:border-b-2 
-                  after:-translate-x-1/2 after:-translate-y-1/2 after:rotate-45
-                  peer-checked:after:block
-                  peer-checked:bg-[#fb2c36] peer-checked:border-[#fb2c36]
-                  peer-focus:ring-1"
-                  />
-                  Я согласен с{" "}
-                  <a href="/personal" className="text-red-500 underline ml-2">
-                    политикой обработки персональных данных
-                  </a>
-                </label> */}
-                <label className="flex items-start text-[10px] sm:text-[13px] md:text-[14] mt-4 sm:mt-5 text-white cursor-pointer">
-                  <input
-                    type="checkbox"
-                    className="absolute opacity-0 cursor-pointer h-0 w-0 peer"
-                    required
-                  />
-                  <span
-                    className="relative flex-shrink-0 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 bg-[#1e1e29] border border-white rounded transition-all duration-200 mr-2 mt-0.5
-    after:content-[''] after:absolute after:hidden after:left-1/2 after:top-1/2 
-    after:w-1.5 after:h-2 sm:after:w-1.5 sm:after:h-2.5 after:border-white after:border-r-2 after:border-b-2 
-    after:-translate-x-1/2 after:-translate-y-1/2 after:rotate-45
-    peer-checked:after:block
-    peer-checked:bg-[#fb2c36] peer-checked:border-[#fb2c36]
-    peer-focus:ring-1"
-                  />
-                  <span className="leading-tight mt-1">
-                    Я согласен с{" "}
-                    <Link
-                      to="/personal"
-                      className="text-red-500 underline ml-2 sm:ml-1 hover:text-red-400 transition-colors duration-200 inline-block"
-                    >
-                      политикой обработки персональных данных
-                    </Link>
-                  </span>
-                </label>
-                <button className="mt-4 sm:mt-5 mb-1 bg-white text-black rounded-full w-[180px] sm:w-[200px] py-2 sm:py-3 text-[14px] sm:text-[16px] font-semibold mx-auto hover:text-white hover:bg-red-500 transition-all duration-500 ease-in-out">
-                  Отправить
-                </button>
-              </form>
+              <PartnerForm />
             </div>
           </div>
         </section>

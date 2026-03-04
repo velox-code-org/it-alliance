@@ -30,6 +30,33 @@ import Vendors from "./pages/Vendors";
 import Contacts from "./pages/Contacts";
 import Personal from "./pages/Personal";
 import ScrollToTop from './components/ScrollToTop'
+// Импорты для новых вендоров
+import CyberprotectPage from "./pages/vendors/cyberprotect.jsx";
+import AstraPage from "./pages/vendors/astra.jsx";
+import DallmeierPage from "./pages/vendors/dallmeier.jsx";
+import IdisglobalPage from "./pages/vendors/idisglobal.jsx";
+import OpenyardPage from "./pages/vendors/openyard.jsx";
+import DataruPage from "./pages/vendors/dataru.jsx";
+import SinexcelPage from "./pages/vendors/sinexcel.jsx";
+import IqToolsPage from "./pages/vendors/iq-tools.jsx";
+import VectortechnologiesPage from "./pages/vendors/vectortechnologies.jsx";
+import KraftwayPage from "./pages/vendors/kraftway.jsx";
+import YadroPage from "./pages/vendors/yadro.jsx";
+import EltexCoPage from "./pages/vendors/eltex-co.jsx";
+import SangrusPage from "./pages/vendors/sangrus.jsx";
+import RedSoftPage from "./pages/vendors/red-soft.jsx";
+import BasealtPage from "./pages/vendors/basealt.jsx";
+import OrionsoftPage from "./pages/vendors/orionsoft.jsx";
+import MindswPage from "./pages/vendors/mindsw.jsx";
+import R7OfficePage from "./pages/vendors/r7-office.jsx";
+import MyofficePage from "./pages/vendors/myoffice.jsx";
+import CommunigateproPage from "./pages/vendors/communigatepro.jsx";
+import WorkspacevkPage from "./pages/vendors/workspacevk.jsx";
+import TermideskPage from "./pages/vendors/termidesk.jsx";
+import WorkspadPage from "./pages/vendors/workspad.jsx";
+import RupostPage from "./pages/vendors/rupost.jsx";
+import EvadapowerPage from "./pages/vendors/evadapower.jsx";
+import AquariusPage from "./pages/vendors/aquarius.jsx";
 
 function App() {
   return (
@@ -59,6 +86,33 @@ function App() {
           <Route path="/vendors/netapp" element={<NetappPages />} />
           <Route path="/vendors/supermicro" element={<SupermicroPages />} />
           <Route path="/vendors/hitachi" element={<HitachiPages />} />
+          <Route path="/vendors/aquarius" element={<AquariusPage />} />
+          <Route path="/vendors/astra" element={<AstraPage />} />
+          <Route path="/vendors/basealt" element={<BasealtPage />} />
+          <Route path="/vendors/communigatepro" element={<CommunigateproPage />} />
+          <Route path="/vendors/cyberprotect" element={<CyberprotectPage />} />
+          <Route path="/vendors/dallmeier" element={<DallmeierPage />} />
+          <Route path="/vendors/dataru" element={<DataruPage />} />
+          <Route path="/vendors/eltex-co" element={<EltexCoPage />} />
+          <Route path="/vendors/evadapower" element={<EvadapowerPage />} />
+          <Route path="/vendors/idisglobal" element={<IdisglobalPage />} />
+          <Route path="/vendors/iq-tools" element={<IqToolsPage />} />
+          <Route path="/vendors/kraftway" element={<KraftwayPage />} />
+          <Route path="/vendors/mindsw" element={<MindswPage />} />
+          <Route path="/vendors/myoffice" element={<MyofficePage />} />
+          <Route path="/vendors/openyard" element={<OpenyardPage />} />
+          <Route path="/vendors/orionsoft" element={<OrionsoftPage />} />
+          <Route path="/vendors/r7-office" element={<R7OfficePage />} />
+          <Route path="/vendors/red-soft" element={<RedSoftPage />} />
+          <Route path="/vendors/rupost" element={<RupostPage />} />
+          <Route path="/vendors/sangrus" element={<SangrusPage />} />
+          <Route path="/vendors/sinexcel" element={<SinexcelPage />} />
+          <Route path="/vendors/termidesk" element={<TermideskPage />} />
+          <Route path="/vendors/vectortechnologies" element={<VectortechnologiesPage />} />
+          <Route path="/vendors/workspacevk" element={<WorkspacevkPage />} />
+          <Route path="/vendors/workspad" element={<WorkspadPage />} />
+          <Route path="/vendors/yadro" element={<YadroPage />} />
+
           <Route path="/cars" element={<CarsPages />} />
           <Route path="/cars/fl" element={<CarsFLPages />} />
           <Route path="/cars/ul" element={<CarsULPages />} />
