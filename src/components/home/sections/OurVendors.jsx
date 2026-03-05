@@ -352,6 +352,8 @@ import NetApp from "../../../assets/logos/netapp-logo.png";
 import Supermicro from "../../../assets/logos/supermicro-logo.png";
 import Hitachi from "../../../assets/logos/hitachi-logo.png";
 import LogoCard from "../../LogoCard";
+import Astra from '../../../assets/vendors/astra.svg';
+import Aquarius from '../../../assets/vendors/aquarius.svg';
 
 const OurVendors = () => {
   const prevButtonRef = useRef(null);
@@ -362,10 +364,13 @@ const OurVendors = () => {
 
   const vendors = [
     { image: Huawei, href: "/vendors/huawei" },
+    { image: Depo, href: "/vendors/depo" },
     { image: IBM, href: "/vendors/ibm" },
     { image: Brocade, href: "/vendors/brocade" },
+    { image: Astra, href: "/vendors/astra" },
     { image: Juniper, href: "/vendors/juniper" },
     { image: Xfusion, href: "/vendors/xfusion" },
+    { image: Aquarius, href: "/vendors/Aquarius" },
     { image: HP, href: "/vendors/hp" },
     { image: Delta, href: "/vendors/delta" },
     { image: UNV, href: "/vendors/unv" },

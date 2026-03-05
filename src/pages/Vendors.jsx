@@ -1,5 +1,8 @@
+// Vendors.jsx
+import { useState } from 'react';
 import LogoCardVendors from '../components/LogoCardVendors';
 
+// Импорты для зарубежных вендоров
 import Huawei from '../components/vendorsComponents/Huawei';
 import Xfusion from '../components/vendorsComponents/Xfusion'
 import Juniper from '../components/vendorsComponents/Juniper'
@@ -20,15 +23,16 @@ import Brocade from '../components/vendorsComponents/Brocade'
 import Cisco from '../components/vendorsComponents/Cisco'
 import Nebo from '../components/vendorsComponents/Nebo'
 import Hitachi from '../components/vendorsComponents/Hitachi'
+import Dallmeier from '../components/vendorsComponents/Dallmeier';
+import Sinexcel from '../components/vendorsComponents/Sinexcel';
+import Evadapower from '../components/vendorsComponents/Evadapower';
 
-// Импорты для новых вендоров
+// Импорты для отечественных вендоров
 import Cyberprotect from '../components/vendorsComponents/Cyberprotect';
 import Astra from '../components/vendorsComponents/Astra';
-import Dallmeier from '../components/vendorsComponents/Dallmeier';
 import Idisglobal from '../components/vendorsComponents/Idisglobal';
 import Openyard from '../components/vendorsComponents/Openyard';
 import Dataru from '../components/vendorsComponents/Dataru';
-import Sinexcel from '../components/vendorsComponents/Sinexcel';
 import IqTools from '../components/vendorsComponents/Iq-tools';
 import Vectortechnologies from '../components/vendorsComponents/Vectortechnologies';
 import Kraftway from '../components/vendorsComponents/Kraftway';
@@ -46,267 +50,133 @@ import Workspacevk from '../components/vendorsComponents/Workspacevk';
 import Termidesk from '../components/vendorsComponents/Termidesk';
 import Workspad from '../components/vendorsComponents/Workspad';
 import Rupost from '../components/vendorsComponents/Rupost';
-import Evadapower from '../components/vendorsComponents/Evadapower';
 import Aquarius from '../components/vendorsComponents/Aquarius';
 
 export default function Vendors() {
+    const [activeTab, setActiveTab] = useState('foreign'); // 'foreign' или 'russian'
+
+    // Массивы вендоров для удобства
+    const foreignVendors = [
+        { component: Huawei, path: '/vendors/huawei' },
+        { component: Xfusion, path: '/vendors/xfusion' },
+        { component: Juniper, path: '/vendors/juniper' },
+        { component: IBM, path: '/vendors/ibm' },
+        { component: Hp, path: '/vendors/hp' },
+        { component: Delta, path: '/vendors/delta' },
+        { component: Unv, path: '/vendors/unv' },
+        { component: Dji, path: '/vendors/dji' },
+        { component: Dell, path: '/vendors/dell' },
+        { component: Lenovo, path: '/vendors/lenovo' },
+        { component: Qtech, path: '/vendors/qtech' },
+        { component: Mellanox, path: '/vendors/mellanox' },
+        { component: H3c, path: '/vendors/h3c' },
+        { component: NetApp, path: '/vendors/netapp' },
+        { component: Supermicro, path: '/vendors/supermicro' },
+        { component: Brocade, path: '/vendors/brocade' },
+        { component: Cisco, path: '/vendors/cisco' },
+        { component: Hitachi, path: '/vendors/hitachi' },
+        { component: Dallmeier, path: '/vendors/dallmeier' },
+        { component: Sinexcel, path: '/vendors/sinexcel' },
+        { component: Evadapower, path: '/vendors/evadapower' },
+    ];
+
+    const russianVendors = [
+        { component: Cyberprotect, path: '/vendors/cyberprotect' },
+        { component: Astra, path: '/vendors/astra' },
+        { component: Idisglobal, path: '/vendors/idisglobal' },
+        { component: Openyard, path: '/vendors/openyard' },
+        { component: Dataru, path: '/vendors/dataru' },
+        { component: IqTools, path: '/vendors/iq-tools' },
+        { component: Vectortechnologies, path: '/vendors/vectortechnologies' },
+        { component: Kraftway, path: '/vendors/kraftway' },
+        { component: Yadro, path: '/vendors/yadro' },
+        { component: Depo, path: '/vendors/depo' },
+        { component: EltexCo, path: '/vendors/eltex-co' },
+        { component: Sangrus, path: '/vendors/sangrus' },
+        { component: RedSoft, path: '/vendors/red-soft' },
+        { component: Basealt, path: '/vendors/basealt' },
+        { component: Orionsoft, path: '/vendors/orionsoft' },
+        { component: Mindsw, path: '/vendors/mindsw' },
+        { component: R7Office, path: '/vendors/r7-office' },
+        { component: Nebo, path: '/vendors/nebo' },
+        { component: Myoffice, path: '/vendors/myoffice' },
+        { component: Communigatepro, path: '/vendors/communigatepro' },
+        { component: Workspacevk, path: '/vendors/workspacevk' },
+        { component: Termidesk, path: '/vendors/termidesk' },
+        { component: Workspad, path: '/vendors/workspad' },
+        { component: Rupost, path: '/vendors/rupost' },
+        { component: Aquarius, path: '/vendors/aquarius' },
+    ];
+
     return (
         <div className="min-h-dvh bg-brand-black py-40">
-
-            <h1
-                className="
-    text-center mb-20 font-bold uppercase mx-5 text-white
-    xl:text-[58px]
-    lg:text-[50px]
-    max-[1260px]:text-[45px]
-    max-[1024px]:text-[40px]
-    max-[768px]:text-[34px]
-    max-[576px]:text-[30px]
-    max-[480px]:text-[26px]
-    max-[370px]:text-[22px]
-  "
-            >
-                НАШИ{" "}
-                <span
-                    className="italic font-normal underline decoration-red-500"
-                >
-                 ЗАРУБЕЖНЫЕ ВЕНДОРЫ
-                </span>
+            <h1 className="
+                    text-center mb-10 font-bold uppercase mx-5 text-white
+                    xl:text-[58px] lg:text-[50px] max-[1260px]:text-[45px]
+                    max-[1024px]:text-[40px] max-[768px]:text-[34px]
+                    max-[576px]:text-[30px] max-[480px]:text-[26px]
+                    max-[370px]:text-[22px]
+                ">
+                НАШИ <span className="italic font-normal underline decoration-red-500">ВЕНДОРЫ</span>
             </h1>
-            <div className="
-            mb-30
-                mx-auto
-                w-[70%]
-                max-[1600px]:w-[80%]
-                max-[1440px]:w-[80%]
-                max-[1260px]:w-[85%]
-                max-[1024px]:w-[95%]
-                max-[992px]:w-[95%]
-                max-[768px]:w-[95%]
-                max-[576px]:w-[90%]
-                max-[480px]:w-[90%]
-                max-[370px]:w-[90%]
-              ">
-
-                <div className="
-                    grid grid-cols-4 gap-8
-                    max-[576px]:grid-cols-2
-                    max-[480px]:grid-cols-2
-                    max-[370px]:grid-cols-2
-                    ">
-
-                    {/* Существующие зарубежные вендоры */}
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Huawei} href="/vendors/huawei" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Xfusion} href="/vendors/xfusion" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Juniper} href="/vendors/juniper" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={IBM} href="/vendors/ibm" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Hp} href="/vendors/hp" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Delta} href="/vendors/delta" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Unv} href="/vendors/unv" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Dji} href="/vendors/dji" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Dell} href="/vendors/dell" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Lenovo} href="/vendors/lenovo" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Depo} href="/vendors/depo" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Qtech} href="/vendors/qtech" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Mellanox} href="/vendors/mellanox" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={H3c} href="/vendors/h3c" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={NetApp} href="/vendors/netapp" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Supermicro} href="/vendors/supermicro" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Brocade} href="/vendors/brocade" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Cisco} href="/vendors/cisco" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Nebo} href="/vendors/nebo" />
-                    </div>
-
-                    <div className="flex justify-center ">
-                        <LogoCardVendors Image={Hitachi} href="/vendors/hitachi" />
-                    </div>
-
-                    {/* Новые зарубежные вендоры */}
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Dallmeier} href="/vendors/dallmeier" />
-                    </div>
-
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Sinexcel} href="/vendors/sinexcel" />
-                    </div>
-
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Evadapower} href="/vendors/evadapower" />
-                    </div>
+            {/* Табы */}
+            <div className="flex justify-center mb-12">
+            <div className="inline-flex">
+                    <button
+                        onClick={() => setActiveTab('foreign')}
+                        className={`
+                            px-8 py-3 text-lg font-medium rounded-full transition-all
+                            max-[576px]:px-4 max-[576px]:py-2 max-[576px]:text-base
+                            ${activeTab === 'foreign'
+                            ? 'bg-red-600 text-white shadow-lg'
+                            : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                        }
+                        `}
+                    >
+                        ЗАРУБЕЖНЫЕ
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('russian')}
+                        className={`
+                            px-8 py-3 text-lg font-medium rounded-full transition-all
+                            max-[576px]:px-4 max-[576px]:py-2 max-[576px]:text-base
+                            ${activeTab === 'russian'
+                            ? 'bg-red-600 text-white shadow-lg'
+                            : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                        }
+                        `}
+                    >
+                        ОТЕЧЕСТВЕННЫЕ
+                    </button>
                 </div>
             </div>
 
-            <h2
-                className="
-    text-center mb-20 font-bold uppercase mx-5 text-white
-    xl:text-[58px]
-    lg:text-[50px]
-    max-[1260px]:text-[45px]
-    max-[1024px]:text-[40px]
-    max-[768px]:text-[34px]
-    max-[576px]:text-[30px]
-    max-[480px]:text-[26px]
-    max-[370px]:text-[22px]
-  "
-            >
-                НАШИ{" "}
-                <span
-                    className="italic font-normal underline decoration-red-500"
-                >
-                 ОТЕЧЕСТВЕННЫЕ ВЕНДОРЫ
-                </span>
-            </h2>
+            {/* Контент */}
             <div className="
-            mb-30
                 mx-auto
-                w-[70%]
-                max-[1600px]:w-[80%]
-                max-[1440px]:w-[80%]
-                max-[1260px]:w-[85%]
-                max-[1024px]:w-[95%]
-                max-[992px]:w-[95%]
-                max-[768px]:w-[95%]
-                max-[576px]:w-[90%]
-                max-[480px]:w-[90%]
+                w-[70%] max-[1600px]:w-[80%] max-[1440px]:w-[80%]
+                max-[1260px]:w-[85%] max-[1024px]:w-[95%] max-[992px]:w-[95%]
+                max-[768px]:w-[95%] max-[576px]:w-[90%] max-[480px]:w-[90%]
                 max-[370px]:w-[90%]
-              ">
-
+            ">
                 <div className="
                     grid grid-cols-4 gap-8
-                    max-[576px]:grid-cols-2
-                    max-[480px]:grid-cols-2
-                    max-[370px]:grid-cols-2
-                    ">
-
-                    {/* Существующие отечественные вендоры */}
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Cyberprotect} href="/vendors/cyberprotect" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Astra} href="/vendors/astra" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Idisglobal} href="/vendors/idisglobal" />
-                    </div>
-
-                    {/* Новые отечественные вендоры */}
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Openyard} href="/vendors/openyard" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Dataru} href="/vendors/dataru" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={IqTools} href="/vendors/iq-tools" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Vectortechnologies} href="/vendors/vectortechnologies" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Kraftway} href="/vendors/kraftway" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Yadro} href="/vendors/yadro" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={EltexCo} href="/vendors/eltex-co" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Sangrus} href="/vendors/sangrus" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={RedSoft} href="/vendors/red-soft" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Basealt} href="/vendors/basealt" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Orionsoft} href="/vendors/orionsoft" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Mindsw} href="/vendors/mindsw" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={R7Office} href="/vendors/r7-office" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Myoffice} href="/vendors/myoffice" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Communigatepro} href="/vendors/communigatepro" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Workspacevk} href="/vendors/workspacevk" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Termidesk} href="/vendors/termidesk" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Workspad} href="/vendors/workspad" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Rupost} href="/vendors/rupost" />
-                    </div>
-                    <div className="flex justify-center">
-                        <LogoCardVendors Image={Aquarius} href="/vendors/aquarius" />
-                    </div>
+                    max-[576px]:grid-cols-2 max-[480px]:grid-cols-2 max-[370px]:grid-cols-2
+                ">
+                    {activeTab === 'foreign'
+                        ? foreignVendors.map((vendor, index) => (
+                            <div key={index} className="flex justify-center">
+                                <LogoCardVendors Image={vendor.component} href={vendor.path} />
+                            </div>
+                        ))
+                        : russianVendors.map((vendor, index) => (
+                            <div key={index} className="flex justify-center">
+                                <LogoCardVendors Image={vendor.component} href={vendor.path} />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
-    )
+    );
 }
