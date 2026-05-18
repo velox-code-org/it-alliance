@@ -57,7 +57,7 @@ function Contacts() {
               <b>Телефон:</b> +7 (499) 322-25-03
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Email:</b> info@it-alliance.ru
+              <b>Email:</b> Info@itacomp.ru
             </p>
           </div>
 
@@ -66,7 +66,7 @@ function Contacts() {
               ТЕХПОДДЕРЖКА
             </h3>
             <p className="text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
-              <b>Email:</b> support@it-alliance.ru
+              <b>Email:</b> support@itacomp.ru
             </p>
             <p className="mt-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
               <b>Телефон:</b> 8 (800) 533-98-17
