@@ -181,7 +181,7 @@ const MainDirections = () => {
                 },
                 {
                     title: "Управление доступом (IdM/IAM/MFA)",
-                    brands: ["avanpost", "multifactor", "aladdin", "infotecs"],
+                    brands: ["avanpost", "multifactor", "aladdin"],
                     gridWidth: 4
                 },
                 {
@@ -191,7 +191,7 @@ const MainDirections = () => {
                 },
                 {
                     title: "Криптографическая защита информации",
-                    brands: ["aladdin", "infotecs", "code-security"],
+                    brands: ["aladdin", "code-security"],
                     gridWidth: 3
                 }
             ]

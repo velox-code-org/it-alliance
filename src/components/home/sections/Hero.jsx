@@ -10,9 +10,9 @@ const Hero = () => {
         setIsChecked(checked)
 
         if (checked) {
-            // Скачивание файла
+            // Скачивание файла из public папки
             const link = document.createElement('a')
-            link.href = '/src/assets/presentation.pdf'
+            link.href = '/presentation.pdf'  // Теперь путь от корня
             link.download = 'presentation.pdf'
             document.body.appendChild(link)
             link.click()
