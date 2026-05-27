@@ -1,0 +1,17 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.badge {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: #E7000B;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

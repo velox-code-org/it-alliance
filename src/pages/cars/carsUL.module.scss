@@ -1,0 +1,397 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+.stepSection {
+  margin: fluid(40, 100) 0;
+}
+.stepHeader {
+  margin: 2.5rem 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formBlock {
+  margin-top: 1.5rem;
+}
+.formHeader {
+  background-color: #1E1E1E;
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.formHeaderText {
+  font-weight: 800;
+  font-size: 2.3rem;
+  line-height: 1.25;
+}
+.infoBlock {
+  margin-top: 1.5rem;
+  @media (min-width: 640px) {
+    margin-top: 1.75rem;
+  }
+  @media (min-width: 1024px) {
+    margin-top: 2rem;
+  }
+}
+.infoBlockRed {
+  background-color: #FF0000;
+  padding: 2rem 0;
+}
+.infoBlockText {
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  line-height: 1.25;
+}
+.infoBlockBlack {
+  color: black;
+}
+.stepContent {
+  margin-top: 4rem;
+}
+.bannerBorder {
+  border: 1px solid #b3b3b3;
+  display: flex;
+  justify-content: space-between;
+}
+.bannerContent {
+  padding: 1rem 0 1rem 1rem;
+}
+.bannerImageDesktop {
+  @media (max-width: 779px) {
+    display: none;
+  }
+  @media (min-width: 780px) {
+    display: block;
+  }
+}
+.blackText {
+  color: black;
+  display: block;
+}
+.mainTitleWrapper {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.75rem;
+}
+.notes {
+  margin-top: 1rem;
+}
+.noteItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+.noteStar {
+  color: #E40000;
+  font-size: 1.4rem;
+  margin-top: 0.125rem;
+}
+.noteText {
+  margin-left: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+.noteTextGray {
+  margin-left: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: #9E9E9E;
+}
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+.listMarker {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+}
+.markerLine {
+  display: block;
+  height: 1px;
+  width: 2rem;
+  background-color: #2D2D2D;
+  transition: width 0.3s;
+  .listItem:hover & {
+    width: 2.5rem;
+  }
+}
+.markerDot {
+  display: block;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background-color: #2D2D2D;
+}
+.listText {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.redText {
+  color: #FF0000;
+  font-weight: 600;
+}
+.redTextBold {
+  color: #FF0000;
+  font-weight: 800;
+}
+.noteWithRed {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.noteStarLarge {
+  color: #E40000;
+  font-size: 1.8rem;
+  margin-top: 0.125rem;
+}
+.noteTextLarge {
+  margin-left: 0.5rem;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 1.4rem;
+}
+.contractBlock {
+  margin-top: 1rem;
+}
+.contractHeader {
+  width: 100%;
+  margin-top: 1rem;
+}
+.contractHeaderText {
+  background-color: black;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.25;
+}
+.contractHeaderBr {
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+.contractHeaderRed {
+  color: #E40000;
+}
+.invoicesGrid {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  @media (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+}
+.invoiceCard {
+  width: 100%;
+  @media (min-width: 1280px) {
+    width: 50%;
+  }
+}
+.invoiceTitle {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+.invoiceText {
+  margin-top: 0.75rem;
+  text-align: justify;
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.6rem;
+}
+.stagesTitle {
+  background-color: black;
+  margin-top: 3rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 0.75rem 0;
+  margin-bottom: 2rem;
+}
+.stagesContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.stageItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  @media (min-width: 640px) {
+    gap: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    gap: 1.5rem;
+  }
+}
+.stageNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stageNumberCircle {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.stageLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.lineVertical {
+  width: 1.5px;
+  background-color: black;
+  flex: 1;
+}
+.lineDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background-color: black;
+}
+.stageContent {
+  padding-top: 0.5rem;
+  padding-bottom: 4rem;
+}
+.stageText {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.stageTextBold {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.deliveryOptionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.deliveryCard {
+  border: 1px solid #1E1E1E;
+  padding: 1.25rem 2.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  position: relative;
+}
+.triangleIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+}
+.noteBlock {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 1rem;
+}
+.stageLast {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+}
+.stageNumberLast {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-top: 0.5rem;
+  background-color: #FF0000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.deliveryText {
+  width: 100%;
+  padding: 0 1rem;
+  @media (min-width: 1024px) {
+    width: 95%;
+    padding: 0;
+  }
+}
+.deliveryParagraph {
+  font-size: 1.6rem;
+  padding: 0.75rem 0;
+  line-height: 1.5;
+  text-align: center;
+  @media (min-width: 640px) {
+    text-align: left;
+  }
+}
+.deliveryBold {
+  color: black;
+  font-weight: 800;
+}
+.totalTimeBlock {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  @media (min-width: 640px) {
+    margin-bottom: 6.25rem;
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: 7.5rem;
+  }
+}
+.totalTimeRed {
+  background-color: #FF0000;
+  padding: 0.75rem 0;
+}
+.totalTimeText {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  line-height: 1.25;
+  @media (min-width: 640px) {
+    font-size: 1.6rem;
+    width: 95%;
+  }
+  @media (min-width: 1024px) {
+    font-size: 21px;
+    width: 96%;
+  }
+}
+.totalTimeBlack {
+  color: black;
+}

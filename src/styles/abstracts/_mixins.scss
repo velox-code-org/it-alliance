@@ -1,0 +1,15 @@
+@use "sass:meta";
+@use "sass:math";
+@function strip-unit($value) {
+  @if meta.type-of($value) == "number" and not math.is-unitless($value) {
+    @return math.div($value, ($value * 0 + 1));
+  }
+  @return $value;
+}
+@function fluid($min-px, $max-px, $viewport: 1920) {
+  $min-val: strip-unit($min-px);
+  $max-val: strip-unit($max-px);
+  $viewport-val: strip-unit($viewport);
+  $vw: math.div($max-val, $viewport-val) * 100;
+  @return clamp(#{$min-val}px, #{$vw}vw, #{$max-val}px);
+}

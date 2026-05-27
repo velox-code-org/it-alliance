@@ -1,50 +1,93 @@
-import CompanyImg from "../../../assets/images/it-alliance-company.png"
+// AboutCompany.jsx
+import styles from './AboutCompany.module.scss'
 
-export default function AboutCompany() {
-  return (
-    <div className="lg:pt-5 lg:min-h-dvh lg:py-10 z-10 bg-white relative">
-      <div className="w-full max-w-300 mx-auto px-5 flex flex-wrap justify-center">
-        <div className="xl:text-[78px] text-[23px] text-center font-bold mb-8">IT ALLIANCE COMPANY</div>
-        <div className="max-w-[1016px]">
-          <p className="text-[9px] md:text-[16px] text-justify">
-            <span className="font-bold">IT Alliance – Ваш надежный партнер в мире IT.&nbsp;</span>
-            Мы поможем построить
-            современную и эффективную IT-инфраструктуру, которая будет
-            обеспечивать бесперебойную работу Вашего бизнеса. IT Alliance – это
-            команда высококвалифицированных специалистов, предоставляющих
-            комплексные решения в сфере информационных технологий, призванные
-            решить IT-задачи любой сложности. Мы не просто поставщики оборудования
-            – мы предлагаем комплексный подход, в которых включены:
-              <span className="italic">
-                поставка
-                высококачественного оборудования от ведущих мировых производителей,
-                профессиональная техническая поддержка, выездная диагностика, а также
-                помощь в разработке и внедрении эффективных IT-стратегий.
-              </span>
-            Наша команда
-            специалистов всегда в курсе новейших технологий и готова предложить
-            инновационные решения, которые <span className="text-[#FF0000] font-[700]">позволят Вашему бизнесу выйти на новый уровень.</span>
-          </p>
-          <div className="flex gap-4 justify-between items-center mt-1">
-            <div className="relative w-full max-w-[365px] h-[71px] mb-16">
-              <div className="border-l border-b w-full max-w-[361px] h-[68px] mb-16"></div>
-              <span className="absolute right-0 bottom-0 w-2 h-2 bg-black rounded-full"></span>
+const AboutCompany = () => {
+    // Timeline data structure representing the layout
+    const timelineData = [
+        {
+            year: "2023",
+            note: "Октябрь",
+            title: "Основание компании",
+            cards: [
+                "Штат: 2 человека",
+                "Оптовая поставка 10 тыс. ед. оборудования"
+            ],
+            revenue: "0.3"
+        },
+        {
+            year: "2024",
+            note: "",
+            title: "Первый крупный проект",
+            cards: [
+                "> 450 млн. руб",
+                "Более 70 реализованных проектов"
+            ],
+            revenue: "2.7"
+        },
+        {
+            year: "2025",
+            note: "",
+            title: "Развитие и рост",
+            cards: [
+                "Штат: 40+ человек",
+                "Более 180 заказчиков"
+            ],
+            revenue: "5.7"
+        }
+    ];
+
+    return (
+        <section className={styles.section}>
+            <div className="container">
+                <div className="text-center mb-7">
+                    <h2 className="h2 color-primary">О КОМПАНИИ</h2>
+                </div>
+                <div className={styles.timeline}>
+                    {/* Horizontal axis line */}
+                    <div className={styles.timelineLine}></div>
+                    {timelineData.map((item, index) => (
+                        <div key={index} className={styles.column}>
+                            {/* Header part with year and a dot on the line */}
+                            <div className={styles.header}>
+                                <div className={styles.yearWrapper}>
+                                    <span className={styles.year}>{item.year}</span>
+                                    {item.note && <span className={styles.note}>{item.note}</span>}
+                                </div>
+                                <div className={styles.dot}></div>
+                            </div>
+                            {/* Title part - placed directly into the grid */}
+                            <h3 className={styles.title}>{item.title}</h3>
+                            {/* Render individual cards directly to align them in grid rows */}
+                            {item.cards.map((cardText, cardIndex) => {
+                                // Determine specific row class based on card position
+                                const cardRowClass = cardIndex === 0 ? styles.cardFirst : styles.cardSecond;
+
+                                return (
+                                    <div key={cardIndex} className={`${styles.card} ${cardRowClass}`}>
+                                        {/* Decorative arrow with a dot */}
+                                        <div className={styles.cardArrow}>
+                                            <svg viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="2" cy="4" r="2" fill="black"/>
+                                                <path d="M2 4H14M14 4L11 1M14 4L11 7" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <p className={styles.cardText}>{cardText}</p>
+                                    </div>
+                                );
+                            })}
+                            {/* Footer part with revenue */}
+                            <div className={styles.footer}>
+                                <span className={styles.revenueLabel}>Выручка</span>
+                                <div className={styles.revenueValue}>
+                                    {item.revenue} <span className={styles.revenueUnit}>млрд. руб</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <a href="/about">
-            <button className="cursor-pointer hover:bg-[#FF0000] duration-300 text-[18px] font-[700] bg-[#1E1E1E] text-white rounded-full px-5 py-3 whitespace-nowrap">
-              ПОДРОБНЕЕ
-            </button>
-            </a>
-            <div className="relative w-full max-w-[365px] h-[71px] mb-16">
-              <span className="absolute left-0 bottom-0 w-2 h-2 bg-black rounded-full"></span>
-              <div className="border-r border-b w-full max-w-[361px] h-[68px] mb-16"></div>
-            </div>
-          </div>
-          <div className=" flex justify-center">
-            <img src={CompanyImg} alt="Company" className="w-[50%] h-auto" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+        </section>
+    )
 }
+
+export default AboutCompany

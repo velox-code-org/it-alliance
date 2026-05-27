@@ -1,0 +1,117 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+// Строка формы
+.formRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+// Строка с сложной структурой
+.formRowComplex {
+  display: flex;
+  gap: 1.5rem;
+}
+// Блок с номером
+.numberBox {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E1E1E;
+}
+.numberBoxTop {
+  margin-top: 0.25rem;
+}
+.numberText {
+  font-size: 1.7rem;
+  color: white;
+}
+// Обертка для инпута
+.inputWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+.inputWrapperColumn {
+  flex-direction: column;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+}
+// Инпут
+.formInput {
+  border: solid #1E1E1E;
+  border-width: 0 0 1px 0;
+  outline: none;
+  flex: 1;
+  padding: 0;
+  min-width: 0;
+  background: transparent;
+}
+.formInputFull {
+  border: solid #1E1E1E;
+  border-width: 0 0 1px 0;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  min-width: 0;
+  background: transparent;
+}
+// Сложная обертка
+.complexWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+.complexRow {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1rem;
+}
+.complexHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+// Чекбоксы
+.checkboxGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.checkboxes {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.checkbox {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.inputWithHint {
+  flex: 1;
+  min-width: 0;
+}
+.inputHint {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  color: #4b5563;
+}

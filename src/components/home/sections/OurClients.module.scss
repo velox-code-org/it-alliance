@@ -1,0 +1,119 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins" as *;
+.section {
+  position: relative;
+  background-color: #ffffff; // Pure white background as requested
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 4rem;
+    min-height: 100dvh;
+    padding: 1.25rem 0;
+    z-index: 4; // Keeps sequential stacking behind partners layer
+  }
+}
+// Side-by-side layout configuration (Text on Left, Logos on Right)
+.layoutContainer {
+  display: flex;
+  flex-direction: column; // Mobile stacked view
+  gap: 4.8rem;
+  width: 100%;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+  }
+}
+// Left side copy metrics container
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+}
+.headerWrapper {
+  margin-bottom: 7rem;
+  h2 {
+    text-align: left;
+    margin: 0 0 5rem;
+  }
+}
+// Subtitle arrow link interactive parameters
+.subtitleLink {
+  color: #000;
+  .arrow {
+    display: inline-block;
+    margin-left: 0.6rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #000;
+  }
+  &:hover {
+    .arrow {
+      transform: translateX(0.6rem);
+    }
+  }
+}
+// Statistical data block
+.counterNumber {
+  font-size: fluid(60, 128);
+  font-weight: 800;
+  color: #F00; // Brand focus identity highlight red color
+  line-height: 1;
+}
+.counterText {
+  font-size: fluid(18, 25);
+  line-height: 1.4;
+  color: #000;
+}
+// Right side 3x3 matrix wrapper
+.matrixColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+}
+// Fluid 3-column configuration structure
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.85rem;
+}
+// Premium card detailing over the white section canvas
+.logoCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #F4F2F2;
+  border-radius: fluid(10, 30);
+  height: fluid(90, 120);
+  padding: 3rem 2rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.08);
+  }
+}
+.logoImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.brandFallback {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+}

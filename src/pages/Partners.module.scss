@@ -1,0 +1,17 @@
+@use "../styles/abstracts/variables" as *;
+@use "../styles/abstracts/mixins" as *;
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: fluid(50, 90);
+}
+.tabsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+.partnersContent {
+  width: 100%;
+}

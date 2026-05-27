@@ -1,0 +1,147 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+// Якорь для скролла к sticky секциям
+.anchor-offset {
+  position: relative;
+  visibility: hidden;
+  height: 0;
+}
+// Альтернативное решение - scroll-margin-top
+section[id] {
+  scroll-margin-top: 8rem;
+  @media (max-width: 768px) {
+    scroll-margin-top: 6rem;
+  }
+}
+// Глобальные настройки для плавного скролла
+html {
+  scroll-behavior: smooth;
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+body {
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.page-header {
+  max-width: 91.839rem;
+  min-height: fluid(90, 217);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2rem 3rem;
+  .corner-tl,
+  .corner-tr,
+  .corner-br,
+  .corner-bl {
+    position: absolute;
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: solid #1E1E1E;
+  }
+  .corner-tl {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px;
+  }
+  .corner-tr {
+    top: 0;
+    right: 0;
+    border-width: 1px 1px 0 0;
+  }
+  .corner-br {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0;
+  }
+  .corner-bl {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 1px 1px;
+  }
+  .h2 {
+    color: $color-primary;
+    font-weight: 800;
+    text-align: center;
+  }
+  .sub-heading {
+    font-size: fluid(18, 32);
+    font-weight: 600;
+    text-align: center;
+  }
+  &.CarsDocSteps {
+    min-height: fluid(90, 150);
+    align-items: start;
+    display: inline-flex;
+    gap: .3rem;
+    margin-bottom: 4rem;
+    .sub-heading {
+      font-size: fluid(18, 28);
+      line-height: 1.1;
+      text-align: left;
+    }
+  }
+  &.hero {
+    max-width: 120rem;
+  }
+  &.invert {
+    .corner-tl,
+    .corner-tr,
+    .corner-br,
+    .corner-bl {
+      border-color: #fff;
+    }
+    .sub-heading {
+      color: #fff;
+    }
+  }
+}
+.num-block {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  .num {
+    margin-top: .5rem;
+    display: flex;
+    width: 6.2rem;
+    height: 6.2rem;
+    flex: 0 0 6.2rem;
+    padding: .5rem;
+    justify-content: center;
+    align-items: center;
+    background: #1E1E1E;
+    color: #fff;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+}
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.advantages-table {
+  font-size: 1.6rem;
+  th {
+    background: #1E1E1E;
+    color: #fff;
+    padding: fluid(10, 20);
+  }
+}
+.logos-wrp {
+  padding: 9rem 0 fluid(50, 150);
+  background: #1E1E1E;
+}
+.buttons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

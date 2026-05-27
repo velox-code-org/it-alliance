@@ -1,0 +1,62 @@
+.gallery {
+  display: flex;
+  margin-top: 3rem;
+  position: relative;
+  min-height: 100vh;
+  
+  @media (min-width: 640px) {
+    margin-top: 3.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+  }
+  
+  @media (min-width: 1024px) {
+    margin-top: 4.5rem;
+  }
+  
+  @media (min-width: 1280px) {
+    margin-top: 5rem;
+  }
+}
+
+.columnLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.columnRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  flex: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageHover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
+  
+  .imageWrapper:hover & {
+    opacity: 1;
+  }
+}

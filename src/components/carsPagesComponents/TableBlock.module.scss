@@ -1,0 +1,41 @@
+.tableGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.card {
+  border: 1px solid #1E1E1E;
+  text-align: center;
+  padding: 0.5rem 0;
+  color: #1f2937;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.groupContainer {
+  display: flex;
+  justify-content: space-between;
+  grid-column: span 1;
+  gap: 1.5rem;
+  @media (min-width: 640px) {
+    grid-column: span 2;
+  }
+  @media (min-width: 1024px) {
+    grid-column: span 1;
+  }
+}
+.groupCard {
+  border: 1px solid #1E1E1E;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  color: #1f2937;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}

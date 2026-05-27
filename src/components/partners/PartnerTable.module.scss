@@ -1,0 +1,46 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0 5rem;
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  min-width: 600px;
+  font-size: 1.6rem;
+}
+.tableHeader {
+  background-color: #1E1E1E;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  th {
+    padding: 1rem;
+  }
+}
+.thFirst {
+  width: 30%;
+}
+.rowEven {
+  background-color: #FFF4F4;
+}
+.rowOdd {
+  background-color: #FFE8E8;
+}
+.tdFirst {
+  padding: 1rem;
+  vertical-align: top;
+}
+.tdLast {
+  padding: 1rem;
+  vertical-align: top;
+}
+.tdTitle {
+  font-weight: 600;
+}
+.tdText {
+  line-height: 1.4;
+  white-space: pre-line;
+}

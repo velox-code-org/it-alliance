@@ -1,0 +1,256 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1000;
+  height: 8rem;
+  background: #1E1E1E;
+}
+.container {
+  max-width: 1920px;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  width: fluid(150, 225);
+}
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding-inline: 1.6rem;
+  border-radius: 100rem;
+  background: #282828;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.navLink,
+.navButton {
+  padding-inline: fluid(8, 16);
+  transition: color 0.3s ease;
+  color: #fff;
+  &:hover {
+    color: $color-primary;
+  }
+}
+.active {
+  color: $color-primary;
+}
+.carsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  padding-inline: 1.6rem;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease,
+  color 0.3s ease;
+  span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1E1E1E;
+    transition: color 0.3s ease;
+  }
+  &:hover {
+    background: $color-primary;
+    span {
+      color: #fff;
+    }
+  }
+}
+.mobileToggle {
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+.mobileMenu {
+  overflow: hidden;
+  max-height: 0;
+  background: #1E1E1E;
+  transition: max-height 0.3s ease;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.mobileMenuOpen {
+  max-height: 500px;
+}
+.mobileNavigation {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-weight: 600;
+}
+.mobileLink,
+.mobilePartnerButton {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #1a1a1a;
+  color: #fff;
+}
+.mobileCarsLink {
+  padding: 16px;
+  text-align: center;
+  background: $color-primary;
+  span {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+.modalTitle {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+.navItemWithDropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  // Hover indicator to trigger display of child dropdown container
+  &:hover {
+    .dropdownMenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+// Dropdown positioning and basic styling configuration
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 1rem); // Positioning slightly lower than navigation background container
+  left: 0;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #282828;
+  border-radius: 1.2rem;
+  padding: 1.2rem 0;
+  min-width: 22rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1010;
+  // Small triangle arrow pointer configuration
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 0.6rem solid #282828;
+  }
+}
+// Individual layout for desktop dropdown items
+.dropdownItem {
+  padding: 1rem 2rem;
+  color: #ffffff;
+  font-size: 1.6rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  text-align: left;
+  white-space: nowrap;
+  &:hover {
+    color: $color-primary;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+// Custom wrapper configuration for simple mobile inline structure
+.mobileSubListWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mobileLinkParent {
+  border-bottom: none !important; // Overriding general rule to clean layout structure before list block
+}
+// Layout for sequential listing container in mobile menu view
+.mobileSubList {
+  display: flex;
+  flex-direction: column;
+  background-color: #171717; // Darker layout fill variant to distinguish nested lists
+  width: 100%;
+}
+// Individual layout links for mobile list blocks
+.mobileSubLink {
+  text-align: center;
+  padding: 1.2rem 1.6rem 1.2rem 3.2rem; // Indented rightward spacing to signal hierarchy visually
+  color: #cccccc;
+  border-bottom: 1px solid #1a1a1a;
+  transition: color 0.2s ease;
+  &:hover, &:active {
+    color: $color-primary;
+  }
+}
+// Modifying standard mobile container max height limits to dynamically encompass longer nested content
+.mobileMenuOpen {
+  max-height: 700px;
+}
+// Добавьте в конец файла
+.mobileLinkParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: none !important;
+  gap: 2rem;
+}
+.dropdownArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.mobileSubListWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mobileSubList {
+  display: flex;
+  flex-direction: column;
+  background-color: #171717;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  // Когда открыто - показываем
+  &.open {
+    max-height: 300px;
+  }
+}
+.mobileSubLink {
+  text-align: center;
+  padding: 1.2rem 1.6rem 1.2rem 3.2rem;
+  color: #cccccc;
+  border-bottom: 1px solid #1a1a1a;
+  transition: color 0.2s ease;
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}

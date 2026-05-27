@@ -1,0 +1,21 @@
+:root {
+  --grid-gap: 3rem 4.7rem;
+}
+.container {
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  max-width: 119.4rem;
+}
+[class^="grid-"] {
+  display: grid;
+  gap: var(--grid-gap);
+}
+@media (min-width: 768px) {
+  .grid-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

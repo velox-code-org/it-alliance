@@ -1,0 +1,43 @@
+.tableRow {
+  &:nth-child(even) {
+    background-color: #FFE8E8;
+  }
+  &:nth-child(odd) {
+    background-color: #FFF4F4;
+  }
+}
+.titleCell {
+  padding: clamp(10px, 1.0416666667vw, 20px);
+  vertical-align: middle;
+  white-space: pre-line;
+  width: 40%;
+  border-bottom: 2px solid #fff;
+}
+.iconCell {
+  padding: 0.25rem;
+  vertical-align: middle;
+  width: 30%;
+  border-bottom: 2px solid #fff;
+}
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkMark {
+  width: 2.7rem;
+  height: 2.7rem;
+  background-color: #E7000B;
+  border-radius: 0.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 252.9 185.46'%3E%3Cpath d='m92.73,185.46c-6.47,0-12.94-2.47-17.88-7.41L7.41,110.61c-9.88-9.88-9.88-25.89,0-35.77,9.88-9.88,25.89-9.88,35.77,0l49.56,49.56L209.73,7.41c9.88-9.88,25.89-9.88,35.77,0,9.88,9.88,9.88,25.89,0,35.77L110.62,178.05c-4.94,4.94-11.41,7.41-17.89,7.41Z' fill='%23fff' stroke-width='0'/%3E%3C/svg%3E");
+  background-size: 1.3rem 1.3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.emptyMark {
+  width: 2.7rem;
+  height: 2.7rem;
+  background: none;
+  border-radius: 0.75rem;
+  border: 1px solid #6A7282;
+}

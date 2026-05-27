@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import {useState, useEffect, useRef} from 'react';
+import styles from './ParallaxImageGallery.module.scss';
+
 import firstImage from './ContactImage/1.png'
 import secondImage from './ContactImage/2.png'
 import thirdImage from './ContactImage/3.png'
@@ -12,7 +14,6 @@ import thirdColoredImage from './ContactImage/colored/3.png'
 import fourthColoredImage from './ContactImage/colored/4.png'
 import fifthColoredImage from './ContactImage/colored/5.png'
 import sixthColoredImage from './ContactImage/colored/6.png'
-import logo from "../assets/images/LOGO_white.svg"
 
 const ParallaxImageGallery = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -41,90 +42,35 @@ const ParallaxImageGallery = () => {
     }, []);
 
     return (
-        <div ref={galleryRef} className='flex mt-12 sm:mt-14 md:mt-16 lg:mt-18 xl:mt-20 relative min-h-screen'>
-            {/* УБРАЛИ логотип и текст отсюда */}
-            
+        <div ref={galleryRef} className={styles.gallery}>
             {/* Левая колонка */}
-            <div className='w-1/2 flex flex-col'>
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={firstImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={firstColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+            <div className={styles.columnLeft}>
+                <div className={styles.imageWrapper}>
+                    <img src={firstImage} alt="Описание" className={styles.image}/>
+                    <img src={firstColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
-
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={secondImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={secondColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+                <div className={styles.imageWrapper}>
+                    <img src={secondImage} alt="Описание" className={styles.image}/>
+                    <img src={secondColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
-
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={thirdImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={thirdColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+                <div className={styles.imageWrapper}>
+                    <img src={thirdImage} alt="Описание" className={styles.image}/>
+                    <img src={thirdColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
             </div>
-
             {/* Правая колонка */}
-            <div className='w-1/2 flex flex-col'>
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={fourthImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={fourthColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+            <div className={styles.columnRight}>
+                <div className={styles.imageWrapper}>
+                    <img src={fourthImage} alt="Описание" className={styles.image}/>
+                    <img src={fourthColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
-
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={fifthImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={fifthColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+                <div className={styles.imageWrapper}>
+                    <img src={fifthImage} alt="Описание" className={styles.image}/>
+                    <img src={fifthColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
-
-                <div className="relative group cursor-pointer overflow-hidden flex-1">
-                    <img
-                        src={sixthImage}
-                        alt="Описание"
-                        className="w-full h-full object-cover"
-                    />
-                    <img
-                        src={sixthColoredImage}
-                        alt="Описание"
-                        className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
+                <div className={styles.imageWrapper}>
+                    <img src={sixthImage} alt="Описание" className={styles.image}/>
+                    <img src={sixthColoredImage} alt="Описание" className={styles.imageHover}/>
                 </div>
             </div>
         </div>

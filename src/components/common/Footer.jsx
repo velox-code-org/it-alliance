@@ -1,99 +1,117 @@
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 import LogoRed from "../../assets/logo-red.svg"
+import styles from "./Footer.module.scss"
+
 const Footer = () => {
-  return (
-    <footer className="relative z-90 border-gray-200 bg-[#1E1E1E] p-6 sm:p-8 md:p-11">
-    <div className="max-w-[90%] mx-auto xl:flex md:flex justify-around gap-4 items-start text-white text-[14px]">
-        
-        {/* Логотип и контакты */}
-        <div>
-            <div className="flex gap-2 items-center">
-                <img src={LogoRed} alt="logo" loading="lazy" />
-                <div className="text-[20px] font-[600]">IT ALLIANCE</div>
-            </div>
-            <br/>
-            <div>
-                <div>
-                    <span className="font-[700]">Адрес:&nbsp;</span>
-                    <span className="font-[300]">Москва, Ленинский проспект, 15А, 119071, Central Park Tower</span>
-                </div>
-                <div>
-                    <span className="font-[700]">График работы:&nbsp;</span>
-                    <span className="font-[300]">09:00 - 19:00</span>
-                </div>
-            </div>
-            <br/>
-            <div>
-                <div>
-                    <span className="font-[700]">Телефон:&nbsp;</span>
-                    <span className="font-[300]">8 (499) 322-25-03</span>
-                </div>
-                <div>
-                    <span className="font-[700]">Email:&nbsp;</span>
-                    <span className="font-[300]">Info@itacomp.ru</span>
-                </div>
-            </div>
-        </div>
+    // Функция для перехода на главную страницу с указанием активного таба
+    const handleDirectionClick = (e, tab) => {
+        e.preventDefault();
 
-        {/* О компании */}
-        <div>
-            <div className="font-[700]">О КОМПАНИИ</div>
-            <br/>
-            <div>
-                <div className="font-[300] hover:text-[#FF0000]">
-                    <Link className="h-12" to="/about">
-                        Описание
-                    </Link>
+        // Сохраняем активный таб в localStorage
+        localStorage.setItem('directionsActiveTab', tab);
+
+        // Триггерим событие storage для синхронизации
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: 'directionsActiveTab',
+            newValue: tab
+        }));
+
+        if (window.location.pathname === '/') {
+            const element = document.getElementById('main-directions');
+            if (element) {
+                element.scrollIntoView({behavior: "smooth", block: "start"});
+                window.history.pushState({}, "", "/#main-directions");
+            }
+        } else {
+            window.location.href = '/#main-directions';
+        }
+    };
+
+    return (
+        <footer className={styles.footer}>
+            <div className={styles.container}>
+                {/* Логотип и контакты */}
+                <div className={styles.section}>
+                    <div className={styles.logoWrapper}>
+                        <img src={LogoRed} alt="logo" className={styles.logoImg} loading="lazy"/>
+                        <div className={styles.logoText}>IT ALLIANCE</div>
+                    </div>
+                    <p className="mb-2">
+                        <span className={styles.label}>Адрес:&nbsp;</span>
+                        <span>Москва, Ленинский проспект, 15А, 119071, Central Park Tower</span>
+                    </p>
+                    <p className="mb-2">
+                        <span className={styles.label}>График работы:&nbsp;</span>
+                        <span>09:00 - 19:00</span>
+                    </p>
+                    <p className="mb-2">
+                        <span className={styles.label}>Телефон:&nbsp;</span>
+                        <span>8 (499) 322-25-03</span>
+                    </p>
+                    <p className="mb-2">
+                        <span className={styles.label}>Email:&nbsp;</span>
+                        <span>info@it-alliance-company.ru</span>
+                    </p>
+                    <p className="mb-2">
+                        <span className={styles.label}>ИНН:&nbsp;</span>
+                        <span>9703158319</span>
+                    </p>
+                    <p className="mb-2">
+                        <span className={styles.label}>ОГРН:&nbsp;</span>
+                        <span>1237700701886</span>
+                    </p>
+                </div>
+                {/* Главная */}
+                <div className={styles.section}>
+                    <div className={styles.sectionTitle}>Главная</div>
+                    <div className={styles.navItem}>
+                        <Link to="/#about-company">О Компании</Link>
+                        <a href="/#main-directions" onClick={(e) => handleDirectionClick(e, 'foreign')}>
+                            Зарубежные решения
+                        </a>
+                        <a href="/#main-directions" onClick={(e) => handleDirectionClick(e, 'russian')}>
+                            Отечественные решения
+                        </a>
+                        <a href="/#main-directions" onClick={(e) => handleDirectionClick(e, 'cyber')}>
+                            Кибербезопасность
+                        </a>
+                        <Link to="/#our-clients">Клиенты</Link>
+                        <Link to="/#our-partners">Партнеры</Link>
+                    </div>
+                </div>
+                <div className={styles.section}>
+                    <div className={styles.sectionTitle}>Клиенты</div>
+                    <div className={styles.navItem}>
+                        <Link to="/clients">Все Клиенты</Link>
+                    </div>
+                </div>
+                {/* ПАРТНЁРЫ */}
+                <div className={styles.section}>
+                    <div className={styles.sectionTitle}>Партнёры</div>
+                    <div className={styles.navItem}>
+                        <Link to="/partners">Все Партнёры</Link>
+                    </div>
+                </div>
+                {/* Контакты */}
+                <div className={styles.section}>
+                    <div className={styles.sectionTitle}>Контакты</div>
+                    <div className={styles.navItem}>
+                        <Link to="/contacts/#maps">Карта</Link>
+                    </div>
+                    <div className={styles.navItem}>
+                        <Link to="/contacts/#contact">Адрес</Link>
+                    </div>
+                    <div className={styles.navItem}>
+                        <Link to="/contacts/#contact">График работы</Link>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div className="font-[300]">
-                    <Link className="h-12 hover:text-[#FF0000]" to="/personal">
-                        Политика обработки персональных данных
-                    </Link>
-                </div>
+            {/* Копирайт */}
+            <div className={styles.copyright}>
+                © Все права защищены ООО "ИТ Альянс"
             </div>
-        </div>
-
-        {/* Вендоры */}
-        <div>
-            <div className="font-[700]">ВЕНДОРЫ</div>
-            <br/>
-            <div className="font-[300] hover:text-[#FF0000]">
-                <Link className="h-12" to="/vendors">
-                    Наши вендоры
-                </Link>
-            </div>
-        </div>
-
-        {/* Контакты */}
-        <div>
-            <div className="font-[700]">КОНТАКТЫ</div>
-            <br/>
-            <div className="font-[300] hover:text-[#FF0000]">
-                <Link className="h-12" to="/contacts/#maps">
-                    Карта
-                </Link>
-            </div>
-            <div className="font-[300] hover:text-[#FF0000]">
-                <Link className="h-12" to="/contacts/#contact">
-                    Адрес
-                </Link>
-            </div>
-            <div className="font-[300] hover:text-[#FF0000]">
-                <Link className="h-12" to="/contacts/#contact">
-                    График работы
-                </Link>
-            </div>
-        </div>
-    </div>
-    
-    {/* Копирайт - такая же ширина как у верхнего блока */}
-    <div className="max-w-[90%] mx-auto mt-6 font-[300] text-[#5E5E5E] text-end">
-        © Все права защищены ООО "ИТ Альянс"
-    </div>
-</footer>
-  )
+        </footer>
+    )
 }
 
 export default Footer

@@ -1,0 +1,122 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins" as *;
+.section {
+  position: relative;
+  background: #F4F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+  @media (min-width: 1024px) {
+    position: sticky;
+    top: 4rem;
+    min-height: 100dvh;
+    padding: 1.25rem 0;
+    z-index: 5;
+  }
+}
+// Side-by-side main content layout splits
+.layoutContainer {
+  display: flex;
+  flex-direction: column-reverse; // Mobile-first stack order
+  gap: 4.8rem;
+  width: 100%;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8rem;
+  }
+}
+// Left side matrix block (3 rows container)
+.matrixColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 55%; // Left side occupies slightly more space for the matrix
+  }
+}
+// Horizontal alignment rows for 3 cards each
+.matrixRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.85rem;
+}
+// Elegant logo card design with custom shadows and border highlight
+.logoCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid #fff;
+  border-radius: fluid(10, 30);
+  height: fluid(90, 120);
+  padding: 3rem 2rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.08);
+  }
+}
+.subtitleLink {
+  color: #000;
+  .arrow {
+    color: #000;
+    display: inline-block;
+    margin-left: 0.6rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover {
+    .arrow {
+      transform: translateX(0.6rem);
+    }
+  }
+}
+.logoImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.brandFallback {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #777777;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+// Right side copy metrics container
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 50%; // Aligns perfectly on the right-hand layout margin
+  }
+}
+.headerWrapper {
+  margin-bottom: 7rem;
+  h2 {
+    text-align: left;
+    margin: 0 0 5rem;
+  }
+}
+// Statistical data badge wrapper
+.counterNumber {
+  font-size: fluid(60, 128);
+  font-weight: 800;
+  color: #F00; // Brand focus identity highlight red color
+  line-height: 1;
+}
+.counterText {
+  font-size: fluid(18, 25);
+  line-height: 1.4;
+  color: #000;
+}
+.actionWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
